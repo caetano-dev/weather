@@ -1,3 +1,3 @@
 # Weather website
 
-work in progress
+A Weather app build with React.js for studying purposes
