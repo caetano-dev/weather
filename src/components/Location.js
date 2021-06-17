@@ -2,12 +2,12 @@ import React from "react";
 import styles from "../styles/components/Location.module.css";
 import DateBuilder from "./DateBuilder.js";
 const Location = (props) => {
-  const { main, name, weather, sys } = props;
+  const {mainInfo, name, weather, sys } = props;
 
   return (
     <>
       <main>
-        {typeof main != "undefined" ? (
+        {typeof mainInfo != "undefined" ? (
           <div>
             <div className={styles.locationBox}>
               <div className={styles.location}>
@@ -16,8 +16,8 @@ const Location = (props) => {
               <div className={styles.date}>{DateBuilder(new Date())}</div>
             </div>
             <div className={styles.weatherBox}>
-              <div className={styles.temp}>{Math.round(main.temp)}°c</div>
-              <div className={styles.weather}>{weather[0].main}</div>
+              <div className={styles.temp}>{Math.round(mainInfo.temp)}°c</div>
+              <div className={styles.weather}>{weather[0].mainInfo}</div>
               <img
                 className={styles.weather_icon}
                 src={

@@ -10,6 +10,8 @@ const api = {
 function SearchBar() {
   const [weather, setWeather] = useState({});
   const [query, setQuery] = useState("");
+  const [temperature, setTemperature] = useState(0);
+
   const search = (evt) => {
     if (evt.key === "Enter") {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
@@ -17,32 +19,31 @@ function SearchBar() {
         .then((result) => {
           setWeather(result);
           setQuery("");
+          setTemperature(result.main.temp);
+        
         });
     }
   };
-
   return (
-    <div
-     /* className={
-        typeof weather.main != undefined
-          ? weather.main.temp > 17
-            ? "app warm"
-            : "app"
-          : "app notfound"
-      }*/
-    >
+    <div className={
+      typeof main != undefined
+        ? temperature > 17
+          ? styles.warm
+          : styles.cold
+        : styles.notfound
+    }>
       <div className={styles.searchBox}>
         <input
           type="text"
           className={styles.searchBar}
-          placeholder="Search..."
+          placeholder="City, state, province..."
           onChange={(e) => setQuery(e.target.value)}
           value={query}
           onKeyPress={search}
         />
       </div>
       <Location
-        main={weather.main}
+        mainInfo={weather.main}
         name={weather.name}
         weather={weather.weather}
         sys={weather.sys}
