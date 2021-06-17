@@ -1,19 +1,17 @@
+
 .locationBox .location {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 32px;
   font-weight: 500;
   text-align: center;
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 .locationBox .date {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
   text-align: center;
-  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
 }
-
 .weatherBox {
   text-align: center;
 }
@@ -23,23 +21,19 @@
   position: relative;
   display: inline-block;
   margin: 30px auto;
-  background-color: rgba(196, 189, 189, 0.3);
   border-radius: 19px;
   padding: 20px;
   color: rgb(226, 226, 226);
   font-size: 102px;
   font-weight: 900;
-  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
   text-align: center;
-  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
 .location_not_found {
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .weatherBox .weather {
   color: #fff;
   font-size: 48px;
   font-weight: 700;
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
