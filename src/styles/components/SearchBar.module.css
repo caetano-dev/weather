@@ -6,7 +6,7 @@
 body {
   font-family: "montseratt", sans-serif;
   height: 100vh;
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(44, 71, 139);
 }
 .cold,
 .warm,
@@ -15,15 +15,6 @@ body {
   background-position: bottom;
   transition: 2s;
   height: 100vh;
-}
-.cold {
-  background-color: rgb(44, 71, 139);
-}
-.warm {
-  background-color: rgb(197, 116, 49);
-}
-.notfound {
-  background-color: rgb(124, 124, 124);
 }
 .searchBox {
   display: flex;

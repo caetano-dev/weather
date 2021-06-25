@@ -1,4 +1,3 @@
-
 .locationBox .location {
   color: rgb(0, 0, 0);
   font-size: 32px;
@@ -15,7 +14,6 @@
 .weatherBox {
   text-align: center;
 }
-
 .weatherBox .temp,
 .location_not_found {
   position: relative;
@@ -31,8 +29,10 @@
 .location_not_found {
   font-size: 2rem;
 }
-
-.weatherBox .weather {
+.weatherBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #fff;
   font-size: 48px;
   font-weight: 700;
