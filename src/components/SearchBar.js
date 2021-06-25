@@ -1,37 +1,26 @@
 import React, { useState } from "react";
 import styles from "../styles/components/SearchBar.module.css";
 import Location from "./Location.js";
-
+import axios from "axios";
 const api = {
   key: "049c4a1468ae4fd24182a8598e98cd94",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
 function SearchBar() {
-  const [weather, setWeather] = useState({});
+  const [weatherData, setWeatherData] = useState({});
   const [query, setQuery] = useState("");
-  const [temperature, setTemperature] = useState(0);
 
   const search = (evt) => {
-    if (evt.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then((res) => res.json())
-        .then((result) => {
-          setWeather(result);
-          setQuery("");
-          setTemperature(result.main.temp);
-        
-        });
+    if (evt.key === "Enter" && query !== "") {
+      axios
+        .get(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+        .then((res) => setWeatherData(res.data))
+        .then(setQuery(""));
     }
   };
   return (
-    <div className={
-      typeof main != undefined
-        ? temperature > 17
-          ? styles.warm
-          : styles.cold
-        : styles.notfound
-    }>
+    <div className={styles.appBackgroud}>
       <div className={styles.searchBox}>
         <input
           type="text"
@@ -43,10 +32,10 @@ function SearchBar() {
         />
       </div>
       <Location
-        mainInfo={weather.main}
-        name={weather.name}
-        weather={weather.weather}
-        sys={weather.sys}
+        mainInfo={weatherData.main}
+        name={weatherData.name}
+        weather={weatherData.weather}
+        sys={weatherData.sys}
       />
     </div>
   );
