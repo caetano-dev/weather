@@ -4,7 +4,7 @@
   box-sizing: 0;
 }
 body {
-  font-family: "montseratt", sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   height: 100vh;
   background-color: rgb(44, 71, 139);
 }
