@@ -31,8 +31,8 @@ const Location = (props) => {
         ) : (
           <div>
             <div className={styles.locationBox}>
-              <div className={styles.location}>Location not found</div>
-              <div className={styles.date}>Try again</div>
+              <div className={styles.location}>Where are you?</div>
+              <div className={styles.date}>Type your location and check the current temperature</div>
             </div>
           </div>
         )}
