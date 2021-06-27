@@ -3,7 +3,7 @@ import styles from "../styles/components/SearchBar.module.css";
 import Location from "./Location.js";
 import axios from "axios";
 const api = {
-  key: "049c4a1468ae4fd24182a8598e98cd94",
+  key: process.env.REACT_APP_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
